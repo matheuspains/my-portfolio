@@ -1,27 +1,83 @@
+/* Adicione este código ao seu styles.css */
+
+/* Estilos gerais para o corpo da página */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Arial', sans-serif; /* Define a fonte do texto */
+    margin: 0; /* Remove margens padrão do corpo */
+    padding: 0; /* Remove preenchimento padrão do corpo */
 }
 
+/* Estilos para o cabeçalho da página */
 header {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1em 0;
+    background-color: #333; /* Cor de fundo do cabeçalho */
+    color: #fff; /* Cor do texto no cabeçalho */
+    text-align: center; /* Alinhamento do texto no centro */
+    padding: 1em 0; /* Espaçamento interno do cabeçalho */
 }
 
+/* Estilos para botões na página */
+button {
+    display: block; /* Torna o botão um bloco, ocupando toda a largura disponível */
+    margin: 20px auto; /* Define margens para centralizar o botão */
+}
+
+/* Estilos para a barra lateral */
+#sidebar {
+    width: 200px; /* Largura da barra lateral */
+    height: 100%; /* Altura total da barra lateral */
+    background-color: #333; /* Cor de fundo da barra lateral */
+    color: #fff; /* Cor do texto na barra lateral */
+    position: fixed; /* Posição fixa para permanecer na tela enquanto rola */
+    top: 0; /* Alinha a barra lateral ao topo da página */
+    left: -200px; /* Inicialmente, esconde a barra lateral à esquerda */
+    transition: left 0.3s ease-in-out; /* Adiciona uma transição suave para a propriedade 'left' */
+    overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for maior que a altura da barra lateral */
+}
+
+/* Exibe a barra lateral quando a classe 'show' está presente */
+#sidebar.show {
+    left: 0; /* Move a barra lateral para a posição 0 (visível) */
+}
+
+/* Estilos para o conteúdo principal */
+main {
+    margin-left: 0; /* Inicialmente, não há margem à esquerda no conteúdo principal */
+    transition: margin-left 0.3s ease-in-out; /* Adiciona uma transição suave para a propriedade 'margin-left' */
+}
+
+/* Adiciona margem à esquerda no conteúdo principal quando a barra lateral está visível */
+#sidebar.show + main {
+    margin-left: 200px; /* Ajusta a margem à esquerda quando a barra lateral está visível */
+}
+
+/* Estilos para seções de conteúdo na página */
 section {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
+    max-width: 800px; /* Largura máxima das seções */
+    margin: 20px auto; /* Define margens para centralizar as seções */
+    padding: 20px; /* Adiciona preenchimento interno às seções */
+    border: 1px solid #ccc; /* Adiciona uma borda às seções */
 }
 
+/* Estilos para o rodapé da página */
 footer {
+    position: absolute; /* Fixa o rodapé na parte inferior da página */
+    bottom: 0; /* Alinha o rodapé ao fundo da página */
+    width: 100%; /* Faz o rodapé ocupar 100% da largura da página */
+    background-color: #333; /* Cor de fundo do rodapé */
+    color: #fff; /* Cor do texto no rodapé */
+    text-align: center; /* Alinhamento do texto no centro */
+    padding: 1em 0; /* Espaçamento interno do rodapé */
+}
+
+/* Estilos para o botão "Toggle Sidebar" na header */
+button#toggleSidebar {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Distância de 10px da borda direita */
+    transform: translateY(-50%); /* Centraliza verticalmente com base no topo */
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 1em 0;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
-
