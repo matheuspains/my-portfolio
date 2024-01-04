@@ -2,50 +2,84 @@
 <html lang="en">
 
 <head>
-    <!-- Define a codificação de caracteres para UTF-8 -->
+    <!-- Metadados -->
     <meta charset="UTF-8">
-    <!-- Configura a visualização responsiva para dispositivos móveis -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título da página exibido na aba do navegador -->
     <title>Meu Portfólio</title>
-    <!-- Inclui o arquivo de estilos externo -->
+    
+    <!-- Link para o arquivo de estilo externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Cabeçalho da página -->
+    <!-- Cabeçalho -->
     <header>
-        <!-- Adicione um span para o ícone à esquerda do nome Pandora e outro à direita -->
         <h1><span id="leftSidebarIcon">&gt;</span> Pandora <span id="rightSidebarIcon">&lt;</span></h1>
     </header>
     
     <!-- Barra lateral -->
     <div id="sidebar">
         <!-- Título da barra lateral -->
-        <h2>Formulário de Login</h2>
+        <h2>Bem-vindo!</h2>
+        
+        <!-- Formulário de Login -->
+        <form id="loginForm">
+            <!-- Campos de Usuário e Senha -->
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <!-- Linha para Manter Conectado e Esqueceu a Senha -->
+            <div class="form-row">
+                <!-- Manter Conectado -->
+                <div class="checkbox-row">
+                    <input type="checkbox" id="keepLoggedIn" name="keepLoggedIn">
+                    <label for="keepLoggedIn">Manter Conectado</label>
+                </div>
+                
+                <!-- Espaço entre "Manter Conectado" e "Esqueceu a Senha" -->
+                <div class="spacer"></div>
+                
+                <!-- Esqueceu a Senha -->
+                <div class="forgot-password">
+                    <a href="#">Esqueceu a Senha?</a>
+                </div>
+            </div>
+            
+            <!-- Botão de Login -->
+            <button type="submit" class="login-button">Login</button>
+            
+            <!-- Links adicionais -->
+            <div class="additional-links">
+                <span>|</span>
+                <a href="#" class="create-account-link">Criar uma Conta</a>
+            </div>
+        </form>
     </div>
 
     <!-- Conteúdo principal -->
     <main>
-        <!-- Seção "Sobre Mim" -->
-        <section>
-            <h2>Sobre Mim</h2>
-            <p>Olá! Bem-vindo ao meu portfólio...</p>
+        <!-- Seção "Sobre" -->
+        <section id="sobre">
+            <h2>Intro</h2>
+            <p>Olá! Bem-vindo a este projeto OpenSource.</p>
         </section>
 
         <!-- Seção "Projetos" -->
-        <section>
-            <h2>Projetos</h2>
+        <section id="projetos">
+            <h2>Projeto</h2>
+            <p>Interested in contributing? Feel free to reach out to me via email at pains@discente.ufg.br</p>
         </section>
     </main>
 
-    <!-- Rodapé da página -->
+    <!-- Rodapé -->
     <footer>
-        <!-- Exibe o ano e o texto de direitos autorais -->
-        <p>&copy; 2024 Meu Portfólio</p>
+        <p>&copy; 2024 Portfólio</p>
     </footer>
 
-    <!-- Inclui o arquivo de script JavaScript -->
+    <!-- Script JavaScript -->
     <script src="script.js"></script>
 </body>
 

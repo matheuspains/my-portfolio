@@ -1,19 +1,12 @@
-// Aguarda o evento de carregamento completo do DOM (Document Object Model)
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtém a referência para a barra lateral e o título no cabeçalho
     const sidebar = document.getElementById('sidebar');
     const headerTitle = document.querySelector('header h1');
 
-    // Adiciona um ouvinte de evento para o clique no título no cabeçalho
     headerTitle.addEventListener('click', function () {
-        // Alterna a presença da classe 'show' na barra lateral
         sidebar.classList.toggle('show');
-
-        // Obtém as referências para os ícones à esquerda e à direita do título
         const leftIcon = headerTitle.querySelector('span#leftSidebarIcon');
         const rightIcon = headerTitle.querySelector('span#rightSidebarIcon');
 
-        // Alterna o conteúdo dos spans entre ">" e "<" conforme necessário
         if (sidebar.classList.contains('show')) {
             leftIcon.textContent = '<';
             rightIcon.textContent = '>';
@@ -22,4 +15,35 @@ document.addEventListener('DOMContentLoaded', function () {
             rightIcon.textContent = '<';
         }
     });
+
+    // Adiciona um ouvinte de evento para o envio do formulário
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', function (event) {
+        // Impede o envio padrão do formulário
+        event.preventDefault();
+
+        // Chama a função para redirecionar apenas se a verificação for bem-sucedida
+        if (redirecionarPaginaBranco()) {
+            // Substitua este caminho com a lógica de redirecionamento apropriada
+            window.location.href = 'pagina_em_branco.html';
+        }
+    });
 });
+
+function redirecionarPaginaBranco() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorContainer = document.getElementById('errorContainer');
+
+    // Substitua este exemplo com sua lógica de verificação
+    if (username === 'user' && password === 'senha') {
+        // Retorna verdadeiro apenas se a verificação for bem-sucedida
+        return true;
+    }
+
+    // Adicione uma mensagem de erro dinâmica ao invés de usar alert
+    errorContainer.textContent = 'Usuário ou senha incorretos.';
+    
+    // Retorna falso se a verificação falhar
+    return false;
+}
